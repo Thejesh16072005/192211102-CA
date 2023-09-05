@@ -1,0 +1,157 @@
+DECIMAL TO BINARY
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{  
+int a[10],n,i;    
+printf("Enter the number to convert: ");    
+scanf("%d",&n);    
+for(i=0;n>0;i++)    
+{    
+a[i]=n%2;    
+n=n/2;    
+}    
+printf("\nBinary of Given Number is=");    
+for(i=i-1;i>=0;i--)    
+{    
+printf("%d",a[i]);    
+}    
+return 0;  
+}
+
+HEXADECIMAL TO DECIMAL
+
+#include<stdio.h>
+int main()
+{
+	int n;
+	printf("enter the hex decimal number");
+	scanf("%x",&n);
+	printf("the decimal value is:%d",n);
+	return 0;
+}
+
+DECIMAL TO OCTAL
+
+#include <stdio.h>
+int main()
+{
+long decimal, remainder, quotient,octal=0;
+intoctalnum[100], i = 1, j;
+printf("Enter the decimal number: ");
+scanf("%ld", &decimal);
+    quotient = decimal;
+while (quotient != 0)
+    {
+octalnum[i++] = quotient % 8;
+        quotient = quotient / 8;
+    }
+    for (j = i - 1; j > 0; j--)
+        octal= octal*10 + octalnum[j];
+printf("Equivalent octal value of decimal no %d is: %d  ", decimal,octalnum);
+    return 0;
+}
+
+BINARY TO DECIMAL
+
+#include <stdio.h>
+void main()  
+{  
+intnum, binary_num, decimal_num = 0, base = 1, rem;  
+printf (" Enter a binary number with the combination of 0s and 1s \n");  
+scanf (" %d", &num); 
+binary_num = num; 
+while ( num > 0)  
+    {  
+        rem = num % 10; 
+decimal_num = decimal_num + rem * base;  
+        num = num / 10;  
+        base = base * 2;  
+    }  
+
+printf ( " The binary number is %d \t", binary_num); 
+printf (" \n The decimal number is %d \t", decimal_num);    
+}
+
+TWO STAGE PIPELINING
+
+#include<stdio.h>
+int main()
+{
+	int counter =1,a,b,choice,res,ins;
+	printf("Enter number 1:");
+	scanf("%d",&a);
+	counter = counter+1;
+	printf("Enter number 2:");
+	scanf("%d",&b);
+	counter = counter +1;
+	printf("1-Addition:\n2-Subtraction:\n3-Multiplication:\n4-Division:");
+	scanf("%d",&choice);
+	switch(choice)
+	{
+		case 1: printf("Performing addition\n");
+				res = a+b;
+				counter = counter+1;
+				break;
+		case 2: printf("Performing subtraction\n");
+				res = a-b;
+				counter = counter+1;
+				break;
+		case 3: printf("Performing Multiplication\n");
+				res = a*b;
+				counter = counter+1;
+				break;
+		case 4: printf("Performing Division\n");
+				res = a/b;
+				counter = counter+1;
+				break;
+		default: printf("Wrong input");
+				 break;
+	}
+	printf("The cycle value is:%d\n",counter);
+	printf("Enter the number of instructions:");
+	scanf("%d",&ins);
+	intperformance_measure = ins/counter;
+	printf("The performance measure is:%d\n",performance_measure);
+	return 0;
+	
+}
+
+CPU PERFORMENCE
+
+#include <stdio.h>
+
+int main() 
+{
+  float cr;
+int p,p1,i;
+floatcpu[5];
+floatcpi,ct,max;
+  int n=1000;
+for(i=0;i<=4;i++)
+  {
+cpu[5]=0;
+  }
+printf("\n Enter the number of processors:");
+scanf("%d",&p);
+  p1=p;
+for(i=0;i<p;i++)
+{
+printf("\n Enter the Cycles per Instrcution of processor:");
+scanf("%f",&cpi);
+printf("\n Enter the clockrate in GHz:");
+scanf("%f",&cr);
+ct=1000*cpi/cr;
+printf("The CPU time is: %f",ct);
+cpu[i]=ct;
+}
+max=cpu[0];
+for(i=0;i<p1;i++)
+{
+    if(cpu[i]<=max)
+    max=cpu[i];
+}
+printf("\n The processor has lowest Execution time is: %f ", max);
+    return 0;
+}
