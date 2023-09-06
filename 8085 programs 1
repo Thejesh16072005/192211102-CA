@@ -1,0 +1,75 @@
+16-bit add
+
+LDA 3050
+MOV B,A
+LDA 3051
+ADD B
+STA 3052
+LDA 3053
+MOV B,A
+LDA 3054
+ADC B
+STA 3055
+HLT
+
+16-bit sub
+
+LHLD 2050
+      XCHG
+      LHLD 2052
+      MVI C,00
+      MOV A,E
+      SUB L
+      STA 2054
+      MOV A,D
+      SUB H
+      STA 2055
+      HLT
+
+swapping
+
+LDA 2001
+MOV B,A
+LDA 2002
+MOV C,A
+STA 2003
+MOV A,B
+STA 2004
+HLT
+
+ones and twos complement
+
+LDA 3000
+CMA
+STA 3001
+ADI 01
+STA 3002
+HLT
+
+rotate left
+
+MVI A,02
+RLC
+RLC
+RLC
+RLC
+STA 2000
+HLT
+
+rotate right
+
+MVI A,03
+RRC
+RRC
+RRC
+RRC
+STA 2000
+HLT
+
+logical operATIONS
+
+MVI A,06
+MVI B,04
+ANA B
+STA 2500
+HLT
